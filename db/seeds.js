@@ -1,43 +1,25 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+require('dotenv').config()
+const mongoose = require('mongoose')
+mongoose.connect(process.env.MONGODB_URI)
 
-mongoose.Promise = global.Promise;
-// so it's available every where
+const User = require('../models/User')
+const Idea = require('../models/Idea')
 
-const IdeaSchema = new Schema({
+const mars = new Idea({
+    title: 'Fly to Mars',
+    description: "Earth isn't Red enough. Let's move to a new planet"
+})
+const tesla = new Idea({
+    title: 'Build a Car',
+    description: "Gas is too expensive. I'm gonna build a car that doesn't need gas"
+})
+const elon = new User({
+    userName: 'elon_musk',
+    password: 'spaceiscool',
+    ideas: [mars, tesla]
+})
 
-    title: {
-        type: String,
-    },
-    description: {
-        type: String,
-    },
-    createddate: {
-        type: Number,
-    }
-}, {
-    timestamps: {}
-    })
-
-const UserSchema = new Schema({
-
-    name: {
-        type: String,
-    },
-    password: {
-        type: String,
-    },
-    ideas: [IdeaSchema]
-}, {
-    timestamps: {},
-    userPushEach: true
-    })
-
-    module.exports = {
-        UserSchema,
-        IdeaSchema
-    }
-
-// User has name, password(string), and ideas.
-// Idea has title, description, and created(Date)
-// Make sure the default value for title and description is something similar to "New Title" and "New Description"
+User.remove({})
+    .then(() => elon.save())
+    .then(() => console.log('Successful Save'))
+    .then(() => mongoose.connection.close())
