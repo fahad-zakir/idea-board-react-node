@@ -2,8 +2,8 @@ require('dotenv').config()
 const mongoose = require('mongoose')
 mongoose.connect(process.env.MONGODB_URI)
 
-const User = require('../models/User')
-const Idea = require('../models/Idea')
+const User = require('../db/models/User')
+const Idea = require('../db/models/Idea')
 
 const mars = new Idea({
     title: 'Fly to Mars',
