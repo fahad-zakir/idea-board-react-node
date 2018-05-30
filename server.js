@@ -24,3 +24,10 @@ const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log("Magic happening on port " + PORT);
 })
+
+// for react
+app.use(express.static(__dirname + '/client/build/'));
+// get route for index.html react from the build production
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/client/build/index.html')
+})
