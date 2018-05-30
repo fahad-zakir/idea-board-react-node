@@ -26,7 +26,7 @@ const IdeaSchema = new Schema(
 const UserSchema = new Schema(
     {
 
-        name: {
+        userName: {
             type: String,
             required: false,
             default: 'coolio'
