@@ -4,7 +4,7 @@ class LoginPage extends Component {
     render() {
         return (
             <div>
-                
+               <h1>Nicely Done!</h1> 
             </div>
         );
     }

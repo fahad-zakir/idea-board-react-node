@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="wrapper">
           <div>
             <Link to='/login'>Login</Link>
           </div>
