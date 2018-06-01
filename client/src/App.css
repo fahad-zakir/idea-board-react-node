@@ -1,26 +1,37 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:100,200,300,300i,400,400i,700');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+@import url("https://fonts.googleapis.com/css?family=Mate");
 body {
   font-family: "Open Sans", serif;
 }
 
 .wrapper {
-  background: linear-gradient(to right, #700b74, #86342b);
+  background: linear-gradient(to right, #700b74);
   height: 100vh;
 }
 
 .styling {
   font-size: 50px;
+  margin-left: 20px;
 }
 
-
-
-  .login {
-  height: 90vh;
-  background: url("img/ideas.png") center center no-repeat;
-
+.title {
+  font-family: 'Mate', serif;
+  font-size: 75px;
+  font-weight: 800;
   display: flex;
+  justify-content: center;
+      text-shadow:2px 2px 2px #000000;
+
+  
+}
+
+.login {
+  height: 100vh;
+  background: url("img/ideas.png") center center no-repeat;
+  margin-bottom: 100px;
+  display: absolute;
   align-items: center;
   justify-content: center;
   text-align: center;
